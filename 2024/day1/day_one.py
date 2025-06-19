@@ -27,6 +27,7 @@ right.sort()
 
 #part1
 answer = sum(abs(l - r) for l, r in zip(left, right))
+
 print("part 1 answer: ", answer)
 
 score = [0] * len(left)

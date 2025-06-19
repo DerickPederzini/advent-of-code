@@ -11,29 +11,29 @@ possibleCubes.set('blue', 14);
 
 let ipt = getInput2();
 
-let lines : string []  = ipt.trim().split('\n')
+let lines: string[] = ipt.trim().split('\n')
 
 lines = lines.map((line) => line.split(": ")[1])
-let sumOfIds : number = 0;
+let sumOfIds: number = 0;
 
 const games = lines.map((line) => {
-       return line.split('; ').map((set) => {
+    return line.split('; ').map((set) => {
         return set.split(', ').every((game) => {
-            const [amount, color] =  game.split(" ")
+            const [amount, color] = game.split(" ")
             return possibleCubes.get(color) >= parseInt(amount);
         })
     })
 })
-let  gameId : number = 0;
+let gameId: number = 0;
 
 games.forEach((game) => {
     const d = game.every((game) => {
-            return game;
+        return game;
     })
 
     gameId++;
-    if(d){
-        sumOfIds += gameId;   
+    if (d) {
+        sumOfIds += gameId;
     }
 })
 
